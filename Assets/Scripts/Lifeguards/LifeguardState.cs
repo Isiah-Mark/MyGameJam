@@ -2,7 +2,7 @@ namespace ComfyJam.Lifeguards
 {
     /// <summary>
     /// The lifecycle state of a single lifeguard in the roster.
-    /// A lifeguard moves Available -> Deployed ->
+    /// A lifeguard moves Available -> Deployed -> Dead
     /// and can transition to Dead from Deployed.
     /// </summary>
     public enum LifeguardState
