@@ -39,6 +39,12 @@ namespace ComfyJam.Inventory
         /// <summary>Total usable lifeguards, available plus deployed, excluding dead.</summary>
         int TotalUsable { get; }
 
+        /// <summary>
+        /// True when a roster cap is enabled and reached, so no more can be hired.
+        /// Always false when the cap is disabled. Check this before charging the player.
+        /// </summary>
+        bool IsFull { get; }
+
         /// <summary>Raised after any roster change so the UI can refresh.</summary>
         event Action RosterChanged;
     }
