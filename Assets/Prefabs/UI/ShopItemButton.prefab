@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8001285659870865105}
   - component: {fileID: 9006684139105401802}
   - component: {fileID: 8504372001383028857}
+  - component: {fileID: 4256863325007272923}
   m_Layer: 5
   m_Name: NameText
   m_TagString: Untagged
@@ -34,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -15}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0.15386963, y: -33.325893}
+  m_SizeDelta: {x: 64.75, y: 26.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9006684139105401802
 CanvasRenderer:
@@ -139,6 +140,26 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4256863325007272923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3620384479183694599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.LayoutElement
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: 30
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &6530438233872103438
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,6 +172,7 @@ GameObject:
   - component: {fileID: 8501531311207793686}
   - component: {fileID: 2511105482124565272}
   - component: {fileID: 3273608824128975296}
+  - component: {fileID: 7143596620412876808}
   m_Layer: 5
   m_Name: ShopItemButton
   m_TagString: Untagged
@@ -171,13 +193,13 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2259092704088493634}
-  - {fileID: 5553694044644510136}
   - {fileID: 8001285659870865105}
+  - {fileID: 5553694044644510136}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -199, y: 23}
+  m_AnchoredPosition: {x: -46, y: 7}
   m_SizeDelta: {x: -624.69226, y: -254.7782}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8501531311207793686
@@ -228,7 +250,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 2162905493571145610}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -248,6 +270,26 @@ MonoBehaviour:
   _nameText: {fileID: 8504372001383028857}
   _costText: {fileID: 9065840818473595130}
   _button: {fileID: 2511105482124565272}
+--- !u!114 &7143596620412876808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6530438233872103438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.LayoutElement
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: 64
+  m_PreferredHeight: 64
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &7207278151252136604
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,6 +301,7 @@ GameObject:
   - component: {fileID: 5553694044644510136}
   - component: {fileID: 6727552660441984261}
   - component: {fileID: 9065840818473595130}
+  - component: {fileID: 2048198215487819437}
   m_Layer: 5
   m_Name: CostText
   m_TagString: Untagged
@@ -282,8 +325,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 15}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0.15386963, y: 32.854095}
+  m_SizeDelta: {x: 49.399994, y: 26.820007}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6727552660441984261
 CanvasRenderer:
@@ -385,6 +428,26 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2048198215487819437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7207278151252136604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.LayoutElement
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: 25
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &8976138247816358012
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,14 +506,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5773585, g: 0.5773585, b: 0.5773585, a: 1}
+  m_Color: {r: 0.6075471, g: 0.6075471, b: 0.6075471, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 836733255f240a64b8f958f971dcb7e3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
