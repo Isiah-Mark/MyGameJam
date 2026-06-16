@@ -82,7 +82,6 @@ public class Lifeguard : MonoBehaviour
         Vector2 shorePosition = new Vector2(rescueX, shoreY);
         transform.position = Vector2.MoveTowards(transform.position, shorePosition, speed * Time.deltaTime);
 
-        // Swimmer stays at a fixed offset below the lifeguard
         targetSwimmer.transform.position = (Vector2)transform.position + Vector2.up * 1.5f;
 
         if (Mathf.Abs(((Vector2)transform.position).y - shoreY) < 0.1f)
