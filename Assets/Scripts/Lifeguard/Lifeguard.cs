@@ -1,40 +1,41 @@
+using System;
 using UnityEngine;
+
+/// <summary>How a rescue ended, reported back to whoever deployed the lifeguard.</summary>
+public enum RescueOutcome
+{
+    /// <summary>The swimmer was dragged to shore safely.</summary>
+    Saved,
+
+    /// <summary>The target was an evil swimmer; the lifeguard is lost.</summary>
+    LifeguardLost,
+
+    /// <summary>The target vanished before the rescue finished; the lifeguard comes back.</summary>
+    Aborted
+}
 
 public class Lifeguard : MonoBehaviour
 {
-    [Header("Data")]
-    public LifeguardData data;
-
     private float speed;
     private float shoreY;
 
     private Swimmer targetSwimmer;
     private float rescueX;
+    private Action<RescueOutcome> onComplete;
 
     private enum RescuePhase { None, MoveToSwimmer, DragToShore }
     private RescuePhase phase = RescuePhase.None;
 
     public bool IsFree => phase == RescuePhase.None;
 
-    void Start()
+    void Awake()
     {
         Camera cam = Camera.main;
-        shoreY = -cam.orthographicSize - 2f;
-    }
-
-    public void Initialise(LifeguardData lifeguardData)
-    {
-        data = lifeguardData;
-        speed = data.speed;
+        if (cam != null) shoreY = -cam.orthographicSize - 2f;
 
         SpriteRenderer[] renderers = GetComponentsInChildren<SpriteRenderer>();
         foreach (SpriteRenderer sr in renderers)
-        {
             sr.sortingOrder += 3;
-        }
-
-        Camera cam = Camera.main;
-        shoreY = -cam.orthographicSize - 2f;
     }
 
     void Update()
@@ -46,10 +47,17 @@ public class Lifeguard : MonoBehaviour
         }
     }
 
-    public void AssignTarget(Swimmer swimmer)
+    /// <summary>
+    /// Sends this lifeguard out to rescue <paramref name="swimmer"/> at the given world speed.
+    /// <paramref name="onRescueComplete"/> fires once when the rescue resolves (saved, lost, or
+    /// aborted) so the deployer can update the roster and despawn this lifeguard.
+    /// </summary>
+    public void AssignTarget(Swimmer swimmer, float moveSpeed, Action<RescueOutcome> onRescueComplete)
     {
         if (phase == RescuePhase.DragToShore) return;
 
+        speed = moveSpeed;
+        onComplete = onRescueComplete;
         targetSwimmer = swimmer;
         targetSwimmer.MarkRescueAssigned();
         rescueX = swimmer.transform.position.x;
@@ -59,7 +67,7 @@ public class Lifeguard : MonoBehaviour
 
     void MoveToTarget()
     {
-        if (targetSwimmer == null) { phase = RescuePhase.None; return; }
+        if (targetSwimmer == null) { Complete(RescueOutcome.Aborted); return; }
 
         transform.position = Vector2.MoveTowards(
             transform.position,
@@ -69,6 +77,15 @@ public class Lifeguard : MonoBehaviour
 
         if (Vector2.Distance(transform.position, targetSwimmer.transform.position) < 1.5f)
         {
+            // An evil swimmer drags the lifeguard down: both are lost, no rescue.
+            if (targetSwimmer.IsEvil)
+            {
+                Destroy(targetSwimmer.gameObject);
+                targetSwimmer = null;
+                Complete(RescueOutcome.LifeguardLost);
+                return;
+            }
+
             rescueX = targetSwimmer.transform.position.x;
             targetSwimmer.BeingRescued = true;
             phase = RescuePhase.DragToShore;
@@ -77,7 +94,7 @@ public class Lifeguard : MonoBehaviour
 
     void DragToShore()
     {
-        if (targetSwimmer == null) { phase = RescuePhase.None; return; }
+        if (targetSwimmer == null) { Complete(RescueOutcome.Aborted); return; }
 
         Vector2 shorePosition = new Vector2(rescueX, shoreY);
         transform.position = Vector2.MoveTowards(transform.position, shorePosition, speed * Time.deltaTime);
@@ -89,7 +106,16 @@ public class Lifeguard : MonoBehaviour
             SwimmerManager.Instance?.ReportSaved();
             Destroy(targetSwimmer.gameObject);
             targetSwimmer = null;
-            phase = RescuePhase.None;
+            Complete(RescueOutcome.Saved);
         }
+    }
+
+    // Fires the completion callback once. The deployer despawns this lifeguard from here.
+    void Complete(RescueOutcome outcome)
+    {
+        phase = RescuePhase.None;
+        var callback = onComplete;
+        onComplete = null;
+        callback?.Invoke(outcome);
     }
 }

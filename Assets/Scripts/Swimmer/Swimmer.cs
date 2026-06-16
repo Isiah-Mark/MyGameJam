@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Swimmer : MonoBehaviour
 {
@@ -26,6 +25,10 @@ public class Swimmer : MonoBehaviour
     public float sinkDuration = 2f;
     public static int maxDrowning = 2;
     public bool IsDrowning => isDrowning;
+
+    [Tooltip("Set by the evil-swimmer system. Deploying a lifeguard to an evil swimmer loses it.")]
+    [SerializeField] private bool _isEvil;
+    public bool IsEvil => _isEvil;
     public bool BeingRescued
     {
         get => _beingRescued;
@@ -90,8 +93,6 @@ public class Swimmer : MonoBehaviour
 
     void Update()
     {
-        HandleClick();
-
         if (BeingRescued) return;
 
         if (isSinking)
@@ -294,21 +295,6 @@ public class Swimmer : MonoBehaviour
             float x = Random.Range(swimAreaMin.x, swimAreaMax.x);
             float y = Random.Range(swimAreaMin.y, swimAreaMax.y);
             target = new Vector2(x, y);
-        }
-    }
-
-    void HandleClick()
-    {
-        if (!Mouse.current.leftButton.wasPressedThisFrame) return;
-
-        Vector2 mouseWorld = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        Collider2D hit = Physics2D.OverlapPoint(mouseWorld);
-        if (hit == null) return;
-
-        Swimmer clicked = hit.GetComponent<Swimmer>();
-        if (clicked != null && clicked.IsDrowning && !clicked._rescueAssigned)
-        {
-            LifeguardWheel.Instance.Open(clicked);
         }
     }
 
