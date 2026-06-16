@@ -36,6 +36,7 @@ public class Swimmer : MonoBehaviour
             {
                 _cacheTime = -1f;
                 SetAnimationState(ANIM_SAVED);
+                Debug.Log("BeingRescued set to true, stopping swimmer update");
             }
         }
     }
@@ -64,8 +65,20 @@ public class Swimmer : MonoBehaviour
     private const int ANIM_DROWNING = 1;
     private const int ANIM_SAVED = 2;
 
+    public bool IsBeingRescued => _beingRescued || _rescueAssigned;
+    private bool _rescueAssigned = false;
+
+    public void MarkRescueAssigned()
+    {
+        _rescueAssigned = true;
+    }
+
     void Start()
     {
+        SpriteRenderer[] renderers = GetComponentsInChildren<SpriteRenderer>();
+        foreach (SpriteRenderer sr in renderers)
+            sr.sortingOrder += 1;
+
         speed = Random.Range(minSpeed, maxSpeed);
         animator = GetComponentInChildren<Animator>();
         drownTimer = Random.Range(minTimeUntilDrown, maxTimeUntilDrown);
@@ -293,7 +306,7 @@ public class Swimmer : MonoBehaviour
         if (hit == null) return;
 
         Swimmer clicked = hit.GetComponent<Swimmer>();
-        if (clicked != null && clicked.IsDrowning)
+        if (clicked != null && clicked.IsDrowning && !clicked._rescueAssigned)
         {
             LifeguardWheel.Instance.Open(clicked);
         }

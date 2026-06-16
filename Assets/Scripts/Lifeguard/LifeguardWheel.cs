@@ -31,24 +31,24 @@ public class LifeguardWheel : MonoBehaviour
         if (targetSwimmer != null)
             wheelRoot.transform.position = targetSwimmer.transform.position;
 
-        HandleHover();
-
         if (Time.frameCount <= frameOpened) return;
-
-        if (Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            if (hoveredSlice != null && hoveredSlice.IsAvailable())
-            {
-                SelectLifeguard(hoveredSlice.GetLifeguard());
-            }
-            else
-            {
-                Close();
-            }
-        }
 
         if (Mouse.current.rightButton.wasPressedThisFrame)
         {
+            Close();
+        }
+    }
+
+    public void SetHoveredSlice(LifeguardWheelSlice slice)
+    {
+        hoveredSlice = slice;
+    }
+
+    public void SelectFromSlice(LifeguardWheelSlice slice)
+    {
+        if (slice != null && slice.IsAvailable())
+        {
+            slice.GetLifeguard().AssignTarget(targetSwimmer);
             Close();
         }
     }
@@ -89,45 +89,6 @@ public class LifeguardWheel : MonoBehaviour
             slice.Setup(lifeguards[i]);
             slices[i] = slice;
         }
-    }
-
-    void HandleHover()
-    {
-        if (slices == null) return;
-
-        Vector2 rawMouse = Mouse.current.position.ReadValue();
-        Vector2 mousePos = new Vector2(rawMouse.x, Screen.height - rawMouse.y);
-
-        LifeguardWheelSlice newHovered = null;
-        float closestDist = float.MaxValue;
-        float maxHoverDistance = 60f;
-
-        foreach (LifeguardWheelSlice slice in slices)
-        {
-            if (slice == null) continue;
-
-            Vector2 sliceScreenPos = Camera.main.WorldToScreenPoint(slice.transform.position);
-            float dist = Vector2.Distance(mousePos, sliceScreenPos);
-
-            if (dist < closestDist && dist < maxHoverDistance)
-            {
-                closestDist = dist;
-                newHovered = slice;
-            }
-        }
-
-        if (newHovered != hoveredSlice)
-        {
-            if (hoveredSlice != null) hoveredSlice.OnUnhover();
-            hoveredSlice = newHovered;
-            if (hoveredSlice != null) hoveredSlice.OnHover();
-        }
-    }
-
-    void SelectLifeguard(Lifeguard lifeguard)
-    {
-        lifeguard.AssignTarget(targetSwimmer);
-        Close();
     }
 
     void Close()
