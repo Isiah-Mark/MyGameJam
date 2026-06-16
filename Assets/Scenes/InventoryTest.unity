@@ -1468,6 +1468,7 @@ MonoBehaviour:
   _itemButtonPrefab: {fileID: 3273608824128975296, guid: e70a5b3f953556546b285dc46a9a8993, type: 3}
   _itemContainer: {fileID: 1662428914}
   _balanceText: {fileID: 1729420245}
+  _crewText: {fileID: 0}
   _feedbackText: {fileID: 779035541}
   _feedbackSeconds: 2
 --- !u!114 &2045273214

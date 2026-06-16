@@ -16,6 +16,10 @@ namespace ComfyJam.UI
         [SerializeField] private TMP_Text _nameText;
         [SerializeField] private TMP_Text _costText;
         [SerializeField] private Button _button;
+        [Tooltip("Label inside the Hire button. Shows Hire / Too pricey / Crew full.")]
+        [SerializeField] private TMP_Text _hireLabel;
+        [Tooltip("Optional. Filled Image (Horizontal) showing the type's Speed stat.")]
+        [SerializeField] private Image _speedFill;
 
         /// <summary>The lifeguard type this button hires.</summary>
         public LifeguardTypeSO Type { get; private set; }
@@ -27,10 +31,27 @@ namespace ComfyJam.UI
             _icon.sprite = type.Icon;
             _nameText.text = type.DisplayName;
             _costText.text = type.HireCost.ToString();
+
+            // Optional stat bar; leave the field empty to keep the card minimal.
+            if (_speedFill != null)
+            {
+                _speedFill.fillAmount = Mathf.Clamp01(type.Speed / 10f);
+            }
+
             _button.onClick.AddListener(() => shop.TryHire(type));
         }
 
-        /// <summary>Enables or disables the button, for example when the player cannot afford it.</summary>
-        public void SetInteractable(bool value) => _button.interactable = value;
+        /// <summary>
+        /// Updates the button's enabled state and label for the current wallet/roster.
+        /// Crew-full wins over affordability so the player sees the blocking reason.
+        /// </summary>
+        public void SetAffordance(bool canAfford, bool crewFull)
+        {
+            _button.interactable = canAfford && !crewFull;
+            if (_hireLabel != null)
+            {
+                _hireLabel.text = crewFull ? "Crew full" : (canAfford ? "Hire" : "Too pricey");
+            }
+        }
     }
 }

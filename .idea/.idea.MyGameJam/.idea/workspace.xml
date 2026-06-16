@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae35d8e7-5569-49eb-8627-db81dfb8c520" name="Changes" comment="" />
+    <list default="true" id="ae35d8e7-5569-49eb-8627-db81dfb8c520" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MyGameJam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyGameJam/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/InventoryTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/InventoryTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/ILifeguardRoster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/ILifeguardRoster.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/LifeguardRoster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/LifeguardRoster.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lifeguards/BasicDude.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lifeguards/BasicDude.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lifeguards/LifeguardTypeSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lifeguards/LifeguardTypeSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ShopItemButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ShopItemButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ShopView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ShopView.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,6 +127,7 @@
       <workItem from="1781116476431" duration="467000" />
       <workItem from="1781117032058" duration="1247000" />
       <workItem from="1781122627709" duration="19240000" />
+      <workItem from="1781543147058" duration="5655000" />
     </task>
     <servers />
   </component>
