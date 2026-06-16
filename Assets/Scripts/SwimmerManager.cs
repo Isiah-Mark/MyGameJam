@@ -4,6 +4,8 @@ using TMPro;
 public class SwimmerManager : MonoBehaviour
 {
     public static SwimmerManager Instance { get; private set; }
+    [SerializeField] ObjectiveData drownObjective;
+    [SerializeField] ObjectiveData drownSomeone;
 
     [Header("UI")]
     public TextMeshProUGUI drownedText;
@@ -22,6 +24,8 @@ public class SwimmerManager : MonoBehaviour
 
     public void ReportDrowned()
     {
+        drownObjective.Increment();
+        drownSomeone.Increment();
         DrownedCount++;
         UpdateUI();
     }
