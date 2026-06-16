@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6446659433724454051}
   - component: {fileID: 7456749206564688294}
   - component: {fileID: 7313761506281592891}
+  - component: {fileID: -3791164094184789242}
+  - component: {fileID: 7438990297526747689}
   m_Layer: 0
   m_Name: Swimmer
   m_TagString: Untagged
@@ -43,7 +45,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8214186150519535924}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -106,13 +108,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 582a7cd3020d56644aebc9d4f09afa9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Swimmer
-  speed: 2
+  minSpeed: 0.4
+  maxSpeed: 1.2
   swimAreaMin: {x: 0, y: 0}
   swimAreaMax: {x: 0, y: 0}
   minIdleTime: 1
   maxIdleTime: 4
   avoidRadius: 1.2
   avoidStrength: 2
+  minTimeUntilDrown: 10
+  maxTimeUntilDrown: 30
+  sinkDuration: 2
+  normalColor: {r: 0, g: 1, b: 1, a: 1}
+  drowningColor: {r: 1, g: 0, b: 0, a: 1}
+  panicChance: 0.3
 --- !u!50 &7456749206564688294
 Rigidbody2D:
   serializedVersion: 5
@@ -176,3 +185,39 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!95 &-3791164094184789242
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8214186150519535924}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8eb90ab5c202fc54994e3b3c486d51d1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7438990297526747689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8214186150519535924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteLibrary
+  m_Library: []
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: bb5369692c1a6fe4baf963887389e65c, type: 3}
