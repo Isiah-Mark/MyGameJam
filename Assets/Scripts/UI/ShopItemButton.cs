@@ -18,8 +18,8 @@ namespace ComfyJam.UI
         [SerializeField] private Button _button;
         [Tooltip("Label inside the Hire button. Shows Hire / Too pricey / Crew full.")]
         [SerializeField] private TMP_Text _hireLabel;
-        [Tooltip("Optional. Filled Image (Horizontal) showing the type's Speed stat.")]
-        [SerializeField] private Image _speedFill;
+        [Tooltip("Optional. Shows the type's Speed stat, e.g. \"Speed: 7\". Leave empty to keep the card minimal.")]
+        [SerializeField] private TMP_Text _speedText;
 
         /// <summary>The lifeguard type this button hires.</summary>
         public LifeguardTypeSO Type { get; private set; }
@@ -32,10 +32,10 @@ namespace ComfyJam.UI
             _nameText.text = type.DisplayName;
             _costText.text = type.HireCost.ToString();
 
-            // Optional stat bar; leave the field empty to keep the card minimal.
-            if (_speedFill != null)
+            // Optional stat label; leave the field empty to keep the card minimal.
+            if (_speedText != null)
             {
-                _speedFill.fillAmount = Mathf.Clamp01(type.Speed / 10f);
+                _speedText.text = $"Speed: {type.Speed}";
             }
 
             _button.onClick.AddListener(() => shop.TryHire(type));
