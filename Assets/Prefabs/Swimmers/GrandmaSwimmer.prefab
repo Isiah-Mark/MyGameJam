@@ -89,7 +89,7 @@ MonoBehaviour:
   swimAreaMax: {x: 0, y: 0}
   minIdleTime: 1
   maxIdleTime: 4
-  avoidRadius: 2
+  avoidRadius: 3
   avoidStrength: 2
   minTimeUntilDrown: 10
   maxTimeUntilDrown: 30

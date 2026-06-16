@@ -24,12 +24,14 @@ public class Lifeguard : MonoBehaviour
 
     public void Initialise(LifeguardData lifeguardData)
     {
-        Debug.Log($"Initialising lifeguard with data: {lifeguardData?.lifeguardName}, speed: {lifeguardData?.speed}");
         data = lifeguardData;
         speed = data.speed;
 
-        SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
-        if (sr != null) sr.color = data.color;
+        SpriteRenderer[] renderers = GetComponentsInChildren<SpriteRenderer>();
+        foreach (SpriteRenderer sr in renderers)
+        {
+            sr.sortingOrder += 3;
+        }
 
         Camera cam = Camera.main;
         shoreY = -cam.orthographicSize - 2f;
@@ -49,6 +51,7 @@ public class Lifeguard : MonoBehaviour
         if (phase == RescuePhase.DragToShore) return;
 
         targetSwimmer = swimmer;
+        targetSwimmer.MarkRescueAssigned();
         rescueX = swimmer.transform.position.x;
         transform.position = new Vector2(rescueX, transform.position.y);
         phase = RescuePhase.MoveToSwimmer;
@@ -64,9 +67,8 @@ public class Lifeguard : MonoBehaviour
             speed * Time.deltaTime
         );
 
-        if (Vector2.Distance(transform.position, targetSwimmer.transform.position) < 0.5f)
+        if (Vector2.Distance(transform.position, targetSwimmer.transform.position) < 1.5f)
         {
-            transform.position = targetSwimmer.transform.position;
             rescueX = targetSwimmer.transform.position.x;
             targetSwimmer.BeingRescued = true;
             phase = RescuePhase.DragToShore;
@@ -79,7 +81,8 @@ public class Lifeguard : MonoBehaviour
 
         Vector2 shorePosition = new Vector2(rescueX, shoreY);
         transform.position = Vector2.MoveTowards(transform.position, shorePosition, speed * Time.deltaTime);
-        targetSwimmer.transform.position = transform.position;
+
+        targetSwimmer.transform.position = (Vector2)transform.position + Vector2.up * 1.5f;
 
         if (Mathf.Abs(((Vector2)transform.position).y - shoreY) < 0.1f)
         {
