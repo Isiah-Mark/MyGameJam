@@ -1,4 +1,5 @@
 using UnityEngine;
+using ComfyJam.Core;
 
 public class Swimmer : MonoBehaviour
 {
@@ -39,7 +40,8 @@ public class Swimmer : MonoBehaviour
             {
                 _cacheTime = -1f;
                 SetAnimationState(ANIM_SAVED);
-                Debug.Log("BeingRescued set to true, stopping swimmer update");
+                Debug.Log("BeingRescued s" +
+                          "et to true, stopping swimmer update");
             }
         }
     }
@@ -177,7 +179,8 @@ public class Swimmer : MonoBehaviour
 
         if (sinkTimer <= 0f)
         {
-            SwimmerManager.Instance?.ReportDrowned();
+            // Boundary call: GameManager counts non-evil drownings toward the loss; the HUD follows.
+            GameEvents.RaisePersonDrowned(IsEvil);
             Destroy(gameObject);
         }
     }
