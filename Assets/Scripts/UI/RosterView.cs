@@ -1,3 +1,4 @@
+using ComfyJam.Economy;
 using ComfyJam.Inventory;
 using TMPro;
 using UnityEngine;
@@ -12,11 +13,15 @@ namespace ComfyJam.UI
         [SerializeField] private TMP_Text _availableText;
         [SerializeField] private TMP_Text _deployedText;
         [SerializeField] private TMP_Text _lostText;
+        [Tooltip("Optional. Shows the current currency balance, e.g. \"$100\".")]
+        [SerializeField] private TMP_Text _balanceText;
 
         private void Start()
         {
             LifeguardRoster.Instance.RosterChanged += Refresh;
+            CurrencyManager.Instance.CurrencyChanged += OnCurrencyChanged;
             Refresh();
+            OnCurrencyChanged(CurrencyManager.Instance.Balance);
         }
 
         private void OnDestroy()
@@ -24,6 +29,19 @@ namespace ComfyJam.UI
             if (LifeguardRoster.Instance != null)
             {
                 LifeguardRoster.Instance.RosterChanged -= Refresh;
+            }
+
+            if (CurrencyManager.Instance != null)
+            {
+                CurrencyManager.Instance.CurrencyChanged -= OnCurrencyChanged;
+            }
+        }
+
+        private void OnCurrencyChanged(int balance)
+        {
+            if (_balanceText != null)
+            {
+                _balanceText.text = $"${balance}";
             }
         }
 

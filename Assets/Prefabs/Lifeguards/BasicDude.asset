@@ -16,3 +16,6 @@ MonoBehaviour:
   _displayName: Basic Dude
   _icon: {fileID: 21300000, guid: 836733255f240a64b8f958f971dcb7e3, type: 3}
   _hireCost: 50
+  _speed: 4
+  _stamina: 5
+  _skill: 5
