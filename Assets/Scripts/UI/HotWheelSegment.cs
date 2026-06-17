@@ -27,6 +27,13 @@ namespace ComfyJam.UI
         {
             Type = type;
             _icon.sprite = type.Icon;
+
+            // Optional: the wheel also hit-tests slices by mouse, so a Button is not required.
+            if (_button == null)
+            {
+                _button = GetComponent<Button>();
+            }
+
             if (_button != null)
             {
                 _button.onClick.AddListener(() => onClicked?.Invoke(this));

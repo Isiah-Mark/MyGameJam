@@ -22,6 +22,19 @@ namespace ComfyJam.Lifeguards
         [Min(0)]
         [SerializeField] private int _hireCost;
 
+        [Header("Stats (1-10)")]
+        [Tooltip("How quickly this lifeguard reaches a drowning swimmer.")]
+        [Range(1, 10)]
+        [SerializeField] private int _speed = 5;
+
+        [Tooltip("How many saves before exhaustion; low stamina raises death risk on hard rescues.")]
+        [Range(1, 10)]
+        [SerializeField] private int _stamina = 5;
+
+        [Tooltip("Success chance on tough/deep rescues.")]
+        [Range(1, 10)]
+        [SerializeField] private int _skill = 5;
+
         /// <summary>Identifier used in code and logs.</summary>
         public string Id => _id;
 
@@ -33,5 +46,14 @@ namespace ComfyJam.Lifeguards
 
         /// <summary>Currency cost to hire one of this type.</summary>
         public int HireCost => _hireCost;
+
+        /// <summary>How quickly this lifeguard reaches a drowning swimmer. 1-10.</summary>
+        public int Speed => _speed;
+
+        /// <summary>Saves before exhaustion. 1-10.</summary>
+        public int Stamina => _stamina;
+
+        /// <summary>Success chance on tough rescues. 1-10.</summary>
+        public int Skill => _skill;
     }
 }

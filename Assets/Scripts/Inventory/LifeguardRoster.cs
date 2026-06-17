@@ -41,6 +41,9 @@ namespace ComfyJam.Inventory
         /// <inheritdoc />
         public bool IsFull => _enforceCap && TotalUsable >= _maxRoster;
 
+        /// <inheritdoc />
+        public int MaxRoster => _enforceCap ? _maxRoster : int.MaxValue;
+
         private void Awake()
         {
             if (Instance != null && Instance != this)

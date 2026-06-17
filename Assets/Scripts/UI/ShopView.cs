@@ -23,6 +23,8 @@ namespace ComfyJam.UI
 
         [Header("Labels")]
         [SerializeField] private TMP_Text _balanceText;
+        [Tooltip("Optional crew footer, e.g. \"Crew  2 / 8\".")]
+        [SerializeField] private TMP_Text _crewText;
         [SerializeField] private TMP_Text _feedbackText;
         [Min(0f)]
         [SerializeField] private float _feedbackSeconds = 2f;
@@ -72,15 +74,31 @@ namespace ComfyJam.UI
             RefreshButtons();
         }
 
-        // Grey out any button the player cannot currently use (too poor, or roster full).
+        // Update each button's enabled state and label (too poor, or roster full).
         private void RefreshButtons()
         {
             var balance = CurrencyManager.Instance.Balance;
-            var rosterFull = LifeguardRoster.Instance.IsFull;
+            var roster = LifeguardRoster.Instance;
             foreach (var button in _buttons)
             {
-                button.SetInteractable(!rosterFull && balance >= button.Type.HireCost);
+                button.SetAffordance(balance >= button.Type.HireCost, roster.IsFull);
             }
+
+            RefreshCrew();
+        }
+
+        // Shows "Crew  2 / 8" when the cap is on, or just the usable count when it is off.
+        private void RefreshCrew()
+        {
+            if (_crewText == null)
+            {
+                return;
+            }
+
+            var roster = LifeguardRoster.Instance;
+            _crewText.text = roster.MaxRoster == int.MaxValue
+                ? $"Crew  {roster.TotalUsable}"
+                : $"Crew  {roster.TotalUsable} / {roster.MaxRoster}";
         }
 
         private void ShowFeedback(string message)
