@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteLibrarySourceAsset
+  m_Library:
+  - m_Name: Glasses
+    m_Hash: 958358346
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Glasses
+      m_Hash: 958358346
+      m_Sprite: {fileID: -1708364100589170575, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1708364100589170575, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: Face
+    m_Hash: 623301721
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Face
+      m_Hash: 623301721
+      m_Sprite: {fileID: 6342858184748089040, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 6342858184748089040, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: L arm
+    m_Hash: 470567661
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: L arm
+      m_Hash: 470567661
+      m_Sprite: {fileID: -3936262431150454993, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -3936262431150454993, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: R arm
+    m_Hash: 64774926
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: R arm
+      m_Hash: 64774926
+      m_Sprite: {fileID: -3588817878646352864, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -3588817878646352864, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: Torso
+    m_Hash: 647926657
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Torso
+      m_Hash: 647926657
+      m_Sprite: {fileID: -7787084845030895991, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -7787084845030895991, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: Bun
+    m_Hash: 874332496
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Bun
+      m_Hash: 874332496
+      m_Sprite: {fileID: -7864735770911203263, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -7864735770911203263, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 639172547180816666
+  m_Version: 1

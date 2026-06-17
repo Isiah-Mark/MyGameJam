@@ -389,7 +389,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340cabce19b3f5945b7e65cc652563b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwimmerSpawner
-  swimmerPrefab: {fileID: 8323812411262739683, guid: 71ce5aa362f3b094ab52ab978a10f629, type: 3}
+  grandmaPrefab: {fileID: 2095980528624949903, guid: 819b7eb8a3c26a74fab62692a149f331, type: 3}
+  womanPrefab: {fileID: 2095980528624949903, guid: 819b7eb8a3c26a74fab62692a149f331, type: 3}
   areaMin: {x: -10, y: -5}
   areaMax: {x: 10, y: 5}
   padLeft: 0

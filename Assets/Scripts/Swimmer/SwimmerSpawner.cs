@@ -3,7 +3,9 @@ using System.Collections.Generic;
 
 public class SwimmerSpawner : MonoBehaviour
 {
-    public GameObject swimmerPrefab;
+    [Header("Swimmer Prefabs")]
+    public GameObject grandmaPrefab;
+    public GameObject womanPrefab;
 
     [HideInInspector] public Vector2 areaMin;
     [HideInInspector] public Vector2 areaMax;
@@ -14,10 +16,10 @@ public class SwimmerSpawner : MonoBehaviour
     public float padTop = 0f;
     public float padBottom = 0f;
 
-    private List<GameObject> activeSwimmers = new List<GameObject>();
-
     [Header("Swim Area")]
     public SpriteRenderer backgroundSprite;
+
+    private List<GameObject> activeSwimmers = new List<GameObject>();
 
     void Start()
     {
@@ -28,7 +30,6 @@ public class SwimmerSpawner : MonoBehaviour
         }
         else
         {
-            // Fall back to camera bounds + padding
             Camera cam = Camera.main;
             float height = cam.orthographicSize;
             float width = height * cam.aspect;
@@ -60,7 +61,9 @@ public class SwimmerSpawner : MonoBehaviour
         float x = Random.Range(areaMin.x, areaMax.x);
         float y = Random.Range(areaMin.y, areaMax.y);
 
-        GameObject s = Instantiate(swimmerPrefab, new Vector3(x, y, 0), Quaternion.identity);
+        GameObject prefab = Random.value > 0.5f ? grandmaPrefab : womanPrefab;
+
+        GameObject s = Instantiate(prefab, new Vector3(x, y, 0), Quaternion.identity);
         Swimmer swimmer = s.GetComponent<Swimmer>();
         swimmer.swimAreaMin = areaMin;
         swimmer.swimAreaMax = areaMax;
