@@ -5,26 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae35d8e7-5569-49eb-8627-db81dfb8c520" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MyGameJam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyGameJam/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WheelSlice.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/WheelSlice.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Lifeguards/BasicDude.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Lifeguards/BasicDude.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Day1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/InventoryTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/InventoryTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lifeguard/Lifeguard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lifeguard/Lifeguard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lifeguard/LifeguardData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lifeguard/LifeguardData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lifeguard/LifeguardManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lifeguard/LifeguardManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lifeguard/LifeguardWheel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lifeguard/LifeguardWheel.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lifeguard/LifeguardWheelSlice.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lifeguard/LifeguardWheelSlice.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lifeguards/BasicDude.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lifeguards/BasicDude.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Swimmer/Swimmer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Swimmer/Swimmer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HotWheelSegment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HotWheelSegment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HotWheelView.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HotWheelView.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +124,7 @@
       <workItem from="1781117032058" duration="1247000" />
       <workItem from="1781122627709" duration="19240000" />
       <workItem from="1781543147058" duration="5655000" />
-      <workItem from="1781618954189" duration="17713000" />
+      <workItem from="1781618954189" duration="18193000" />
     </task>
     <servers />
   </component>

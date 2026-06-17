@@ -1036,6 +1036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ComfyJam.UI.RescueWheelView
   _catalog:
   - {fileID: 11400000, guid: 2327cfb08b28e2b4eb743cd76f309efe, type: 2}
+  - {fileID: 11400000, guid: 97fa1e24d0aaa8f4895a6e3afc794a44, type: 2}
   _wheelRoot: {fileID: 767352481}
   _segmentPrefab: {fileID: 2156469733565710295, guid: 342a0d567d9c6f44aa9deb9efd61f1b1, type: 3}
   _segmentContainer: {fileID: 767352482}
@@ -1277,6 +1278,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1299406397}
     m_Modifications:
+    - target: {fileID: 1499739363178943193, guid: c8261f08ca5413944b9764926d61ac10, type: 3}
+      propertyPath: _catalog.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1499739363178943193, guid: c8261f08ca5413944b9764926d61ac10, type: 3}
+      propertyPath: '_catalog.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 97fa1e24d0aaa8f4895a6e3afc794a44, type: 2}
     - target: {fileID: 3299275076932906246, guid: c8261f08ca5413944b9764926d61ac10, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1

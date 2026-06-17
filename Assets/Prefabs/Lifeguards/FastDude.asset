@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f24aaf5cd3087c4d953a0ab18c65b62, type: 3}
-  m_Name: BasicDude
+  m_Name: FastDude
   m_EditorClassIdentifier: Assembly-CSharp::ComfyJam.Lifeguards.LifeguardTypeSO
-  _id: 1
-  _displayName: Basic Dude
-  _icon: {fileID: 21300000, guid: 836733255f240a64b8f958f971dcb7e3, type: 3}
+  _id: 2
+  _displayName: Fast Dude
+  _icon: {fileID: -7887463683063436699, guid: 582954b83cabda84f99469270c30fe1d, type: 3}
   _hireCost: 50
-  _speed: 4
+  _speed: 10
   _stamina: 5
   _skill: 5
