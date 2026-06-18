@@ -33,6 +33,13 @@ public class DayManager : MonoBehaviour
     {
         if (!dayActive) return;
 
+        // Lose the day if too many non-evil swimmers drown.
+        if (SwimmerManager.Instance.DayDrowned >= days[currentDayIndex].drownLimit)
+        {
+            FailDay();
+            return;
+        }
+
         timer -= Time.deltaTime;
         dayUI.UpdateTimer(Mathf.Max(0f, timer));
 
@@ -47,6 +54,7 @@ public class DayManager : MonoBehaviour
         DayConfig config = days[currentDayIndex];
         timer = config.dayDuration;
         swimmerSpawner.Spawn(config.swimmerCount);
+        SwimmerManager.Instance.SetDrownLimit(config.drownLimit);
         SwimmerManager.Instance.ResetDayStats();
         dayActive = true;
     }
@@ -79,6 +87,17 @@ public class DayManager : MonoBehaviour
                 }
             );
         }
+    }
+
+    void FailDay()
+    {
+        dayActive = false;
+        timer = 0f;
+        dayUI.UpdateTimer(0f);
+        swimmerSpawner.ClearSwimmers();
+
+        // Restart the whole run from Day 1 (same flow as completing the game).
+        dayUI.ShowFail(CurrentDay, SwimmerManager.Instance.DayDrowned, Replay);
     }
 
     void Replay()

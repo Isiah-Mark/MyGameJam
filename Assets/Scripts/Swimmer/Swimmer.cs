@@ -192,7 +192,7 @@ public class Swimmer : MonoBehaviour
 
         if (sinkTimer <= 0f)
         {
-            SwimmerManager.Instance?.ReportDrowned();
+            SwimmerManager.Instance?.ReportDrowned(IsEvil);
             Destroy(gameObject);
         }
     }

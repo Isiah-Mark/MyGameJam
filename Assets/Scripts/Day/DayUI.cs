@@ -26,11 +26,17 @@ public class DayUI : MonoBehaviour
     public TextMeshProUGUI gameOverDrownedText;
     public Button replayButton;
 
+    [Header("Fail")]
+    public GameObject failPanel;
+    public TextMeshProUGUI failText;
+    public Button failReplayButton;
+
     void Start()
     {
         introPanel.SetActive(false);
         statsPanel.SetActive(false);
         gameOverPanel.SetActive(false);
+        failPanel.SetActive(false);
     }
 
     public void UpdateTimer(float timeRemaining)
@@ -75,6 +81,18 @@ public class DayUI : MonoBehaviour
         replayButton.onClick.AddListener(() =>
         {
             gameOverPanel.SetActive(false);
+            onReplay?.Invoke();
+        });
+    }
+
+    public void ShowFail(int day, int drowned, Action onReplay)
+    {
+        failPanel.SetActive(true);
+        failText.text = $"You failed!\n{drowned} drowned on Day {day}";
+        failReplayButton.onClick.RemoveAllListeners();
+        failReplayButton.onClick.AddListener(() =>
+        {
+            failPanel.SetActive(false);
             onReplay?.Invoke();
         });
     }
