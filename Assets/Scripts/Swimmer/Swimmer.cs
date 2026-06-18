@@ -49,13 +49,13 @@ public class Swimmer : MonoBehaviour
     public float panicChance = 0.3f;
 
     private Vector2 target;
-    private bool isIdle = false;
-    private float idleTimer;
-    private float drownTimer;
-    private bool isDrowning = false;
-    private bool isSinking = false;
-    private float sinkTimer;
-    private Vector3 baseScale;
+    protected bool isIdle = false;
+    protected float idleTimer;
+    protected float drownTimer;
+    protected bool isDrowning = false;
+    protected bool isSinking = false;
+    protected float sinkTimer;
+    protected Vector3 baseScale;
 
     private Animator animator;
     private SwimmerSpawner spawner;

@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteLibrarySourceAsset
+  m_Library:
+  - m_Name: Glasses
+    m_Hash: 958358346
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Glasses
+      m_Hash: 958358346
+      m_Sprite: {fileID: -1708364100589170575, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1708364100589170575, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+    - m_Name: Evil glasses
+      m_Hash: 10429643
+      m_Sprite: {fileID: 2545469638659581166, guid: aeb149a7d5f2230409ed87e8ea94151c, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 2545469638659581166, guid: aeb149a7d5f2230409ed87e8ea94151c, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 1
+  - m_Name: Face
+    m_Hash: 623301721
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Face
+      m_Hash: 623301721
+      m_Sprite: {fileID: 6342858184748089040, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 6342858184748089040, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+    - m_Name: Evil face
+      m_Hash: 481986457
+      m_Sprite: {fileID: -4289721238919634551, guid: aeb149a7d5f2230409ed87e8ea94151c, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -4289721238919634551, guid: aeb149a7d5f2230409ed87e8ea94151c, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 1
+  - m_Name: L arm
+    m_Hash: 470567661
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: L arm
+      m_Hash: 470567661
+      m_Sprite: {fileID: -3936262431150454993, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -3936262431150454993, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+    - m_Name: Evil L arm
+      m_Hash: 110115594
+      m_Sprite: {fileID: 2070143230241401868, guid: aeb149a7d5f2230409ed87e8ea94151c, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 2070143230241401868, guid: aeb149a7d5f2230409ed87e8ea94151c, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 1
+  - m_Name: R arm
+    m_Hash: 64774926
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: R arm
+      m_Hash: 64774926
+      m_Sprite: {fileID: -3588817878646352864, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -3588817878646352864, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+    - m_Name: Evil R arm
+      m_Hash: 423629545
+      m_Sprite: {fileID: 4685755306235737893, guid: aeb149a7d5f2230409ed87e8ea94151c, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4685755306235737893, guid: aeb149a7d5f2230409ed87e8ea94151c, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 1
+  - m_Name: Torso
+    m_Hash: 647926657
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Torso
+      m_Hash: 647926657
+      m_Sprite: {fileID: -7787084845030895991, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -7787084845030895991, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+    - m_Name: Evil Torso
+      m_Hash: 1006821990
+      m_Sprite: {fileID: 2328468473230066144, guid: aeb149a7d5f2230409ed87e8ea94151c, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 2328468473230066144, guid: aeb149a7d5f2230409ed87e8ea94151c, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 1
+  - m_Name: Bun
+    m_Hash: 874332496
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Bun
+      m_Hash: 874332496
+      m_Sprite: {fileID: -7864735770911203263, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -7864735770911203263, guid: ae54a2ff21da9b24ea6f74fbedf11df8, type: 3}
+    - m_Name: Evil Bun
+      m_Hash: 330302803
+      m_Sprite: {fileID: 7005051352393964848, guid: aeb149a7d5f2230409ed87e8ea94151c, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7005051352393964848, guid: aeb149a7d5f2230409ed87e8ea94151c, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 1
+  m_PrimaryLibraryGUID: 4bf309c7c28074b4392be7fc5e0bebdc
+  m_ModificationHash: 639172552757029034
+  m_Version: 1
