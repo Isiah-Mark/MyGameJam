@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae35d8e7-5569-49eb-8627-db81dfb8c520" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MyGameJam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyGameJam/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Swimmers/Woman.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Swimmers/Woman.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Lifeguards/BasicDude.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Lifeguards/BasicDude.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Lifeguards/FastDude.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Lifeguards/FastDude.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Shop/SwimmerPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Shop/SwimmerPanel.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Day1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Day/DayConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Day/DayConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Day/DayManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Day/DayManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Day/DayUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Day/DayUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Swimmer/Swimmer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Swimmer/Swimmer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Swimmer/SwimmerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Swimmer/SwimmerManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +41,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feature/lose-condition",
+    "git-widget-placeholder": "feature/ui-updates",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -121,7 +117,7 @@
       <workItem from="1781543147058" duration="5655000" />
       <workItem from="1781618954189" duration="18193000" />
       <workItem from="1781713915015" duration="3349000" />
-      <workItem from="1781806129403" duration="3042000" />
+      <workItem from="1781806129403" duration="3651000" />
     </task>
     <servers />
   </component>
