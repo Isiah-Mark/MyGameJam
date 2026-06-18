@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using ComfyJam.Core;
 
 public class SwimmerManager : MonoBehaviour
 {
@@ -9,12 +8,6 @@ public class SwimmerManager : MonoBehaviour
     [Header("UI")]
     public TextMeshProUGUI drownedText;
     public TextMeshProUGUI savedText;
-
-    [Header("Drowned counter colours")]
-    [Tooltip("Colour of the drowned counter when the player is safe (no drownings).")]
-    public Color safeColor = Color.white;
-    [Tooltip("Colour the drowned counter lerps to as the player nears the loss limit.")]
-    public Color dangerColor = Color.red;
 
     public int DrownedCount { get; private set; } = 0;
     public int SavedCount { get; private set; } = 0;
@@ -29,36 +22,22 @@ public class SwimmerManager : MonoBehaviour
         Instance = this;
     }
 
-    void OnEnable()
+    public void ReportDrowned()
     {
-        GameEvents.DrownCountChanged += OnDrownCountChanged;
-    }
-
-    void OnDisable()
-    {
-        GameEvents.DrownCountChanged -= OnDrownCountChanged;
+        DrownedCount++;
+        UpdateUI();
     }
 
     public void ReportSaved()
     {
         SavedCount++;
-        UpdateSavedUI();
+        UpdateUI();
     }
 
-    // Driven by GameManager via the GameEvents boundary; reflects only non-evil drownings.
-    void OnDrownCountChanged(int count, int limit)
+    void UpdateUI()
     {
-        DrownedCount = count;
         if (drownedText != null)
-        {
-            drownedText.text = $"Drowned: {count} / {limit}";
-            float danger = limit > 0 ? Mathf.Clamp01((float)count / limit) : 0f;
-            drownedText.color = Color.Lerp(safeColor, dangerColor, danger);
-        }
-    }
-
-    void UpdateSavedUI()
-    {
+            drownedText.text = $"Drowned: {DrownedCount}";
         if (savedText != null)
             savedText.text = $"Saved: {SavedCount}";
     }
