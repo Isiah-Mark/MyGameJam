@@ -6,6 +6,7 @@ public class Swimmer : MonoBehaviour
     public float minSpeed = 0.4f;
     public float maxSpeed = 1.2f;
     private float speed;
+    private float baseSpeed;
 
     [Header("Swim Area")]
     public Vector2 swimAreaMin;
@@ -29,6 +30,7 @@ public class Swimmer : MonoBehaviour
     [Tooltip("Set by the evil-swimmer system. Deploying a lifeguard to an evil swimmer loses it.")]
     [SerializeField] private bool _isEvil;
     public bool IsEvil => _isEvil;
+
     public bool BeingRescued
     {
         get => _beingRescued;
@@ -39,7 +41,6 @@ public class Swimmer : MonoBehaviour
             {
                 _cacheTime = -1f;
                 SetAnimationState(ANIM_SAVED);
-                Debug.Log("BeingRescued set to true, stopping swimmer update");
             }
         }
     }
@@ -63,6 +64,7 @@ public class Swimmer : MonoBehaviour
     private static Swimmer[] _allSwimmers;
     private static float _cacheTime = -1f;
     private const float CacheInterval = 0.5f;
+    private const float borderBuffer = 0.5f;
 
     private const int ANIM_TREADING = 0;
     private const int ANIM_DROWNING = 1;
@@ -70,6 +72,7 @@ public class Swimmer : MonoBehaviour
 
     public bool IsBeingRescued => _beingRescued || _rescueAssigned;
     private bool _rescueAssigned = false;
+    private bool _beingRescued;
 
     public void MarkRescueAssigned()
     {
@@ -78,14 +81,26 @@ public class Swimmer : MonoBehaviour
 
     void Start()
     {
+        if (swimAreaMin == Vector2.zero && swimAreaMax == Vector2.zero)
+        {
+            Camera cam = Camera.main;
+            float height = cam.orthographicSize;
+            float width = height * cam.aspect;
+            swimAreaMin = new Vector2(-width + 1.5f, -height + 2f);
+            swimAreaMax = new Vector2(width - 1.5f, height - 1.5f);
+        }
+
         SpriteRenderer[] renderers = GetComponentsInChildren<SpriteRenderer>();
         foreach (SpriteRenderer sr in renderers)
             sr.sortingOrder += 1;
 
         speed = Random.Range(minSpeed, maxSpeed);
+        if (_isEvil) speed *= 0.4f;
+        baseSpeed = speed;
+
         animator = GetComponentInChildren<Animator>();
         drownTimer = Random.Range(minTimeUntilDrown, maxTimeUntilDrown);
-        spawner = FindObjectOfType<SwimmerSpawner>();
+        spawner = FindAnyObjectByType<SwimmerSpawner>();
         baseScale = transform.localScale;
         SetAnimationState(ANIM_TREADING);
         PickNewTarget();
@@ -145,7 +160,7 @@ public class Swimmer : MonoBehaviour
         {
             isDrowning = true;
             drownTimer = Random.Range(5f, 10f);
-            speed = minSpeed * 0.1f;
+            speed = baseSpeed * 0.1f;
             SetAnimationState(ANIM_DROWNING);
         }
         else
@@ -182,6 +197,15 @@ public class Swimmer : MonoBehaviour
         }
     }
 
+    bool IsNearBorder()
+    {
+        Vector2 pos = transform.position;
+        return pos.x <= swimAreaMin.x + borderBuffer ||
+               pos.x >= swimAreaMax.x - borderBuffer ||
+               pos.y <= swimAreaMin.y + borderBuffer ||
+               pos.y >= swimAreaMax.y - borderBuffer;
+    }
+
     void Move()
     {
         Vector2 pos = transform.position;
@@ -205,6 +229,19 @@ public class Swimmer : MonoBehaviour
         Vector2 finalDirection = (goalDir + separation * avoidStrength).normalized;
 
         transform.position = pos + finalDirection * speed * Time.deltaTime;
+
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, swimAreaMin.x, swimAreaMax.x),
+            Mathf.Clamp(transform.position.y, swimAreaMin.y, swimAreaMax.y),
+            transform.position.z
+        );
+
+        if (IsNearBorder() && !isDrowning)
+        {
+            float x = Random.Range(swimAreaMin.x + 2f, swimAreaMax.x - 2f);
+            float y = Random.Range(swimAreaMin.y + 2f, swimAreaMax.y - 2f);
+            target = new Vector2(x, y);
+        }
 
         EnforceMinDistance();
     }
@@ -255,7 +292,7 @@ public class Swimmer : MonoBehaviour
         if (Time.time - _cacheTime > CacheInterval)
         {
             _allSwimmers = System.Array.FindAll(
-                FindObjectsOfType<Swimmer>(),
+                FindObjectsByType<Swimmer>(FindObjectsSortMode.None),
                 s => s != null
             );
             _cacheTime = Time.time;
@@ -302,6 +339,4 @@ public class Swimmer : MonoBehaviour
     {
         _cacheTime = -1f;
     }
-
-    private bool _beingRescued;
 }
