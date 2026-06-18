@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae35d8e7-5569-49eb-8627-db81dfb8c520" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Lifeguards/BasicDude.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Lifeguards/BasicDude.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Lifeguards/FastDude.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Lifeguards/FastDude.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Shop/SwimmerPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Shop/SwimmerPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MyGameJam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyGameJam/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Day1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/RescueWheelView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RescueWheelView.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +116,7 @@
       <workItem from="1781543147058" duration="5655000" />
       <workItem from="1781618954189" duration="18193000" />
       <workItem from="1781713915015" duration="3349000" />
-      <workItem from="1781806129403" duration="3651000" />
+      <workItem from="1781806129403" duration="5452000" />
     </task>
     <servers />
   </component>

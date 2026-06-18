@@ -36,9 +36,15 @@ namespace ComfyJam.UI
         [Min(0f)]
         [SerializeField] private float _radius = 160f;
 
+        [Tooltip("Camera orthographic size at which the wheel shows at its authored size. " +
+                 "The wheel counter-scales by zoom so it keeps a constant on-screen size.")]
+        [Min(0.01f)]
+        [SerializeField] private float _referenceOrthographicSize = 5f;
+
         private readonly List<HotWheelSegment> _segments = new();
         private Swimmer _target;
         private bool _isOpen;
+        private Vector3 _baseScale = Vector3.one;
 
         private Camera EventCamera => Camera.main;
 
@@ -56,6 +62,11 @@ namespace ComfyJam.UI
         // The roster exists by Start (Awake on the managers), so it is safe to read here.
         private void Start()
         {
+            if (_wheelRoot != null)
+            {
+                _baseScale = _wheelRoot.transform.localScale;
+            }
+
             BuildSegments();
             if (LifeguardRoster.Instance != null)
             {
@@ -94,7 +105,7 @@ namespace ComfyJam.UI
                     return;
                 }
 
-                _wheelRoot.transform.position = _target.transform.position;
+                UpdateWheelTransform();
 
                 if (Mouse.current.rightButton.wasPressedThisFrame)
                 {
@@ -134,9 +145,27 @@ namespace ComfyJam.UI
             }
 
             _target = target;
-            _wheelRoot.transform.position = target.transform.position;
+            UpdateWheelTransform();
             RefreshCounts();
             SetOpen(true);
+        }
+
+        // Keeps the wheel on its target and counter-scales by zoom so the wheel holds a constant
+        // on-screen size: a world-space object's apparent size goes as worldScale / orthographicSize.
+        private void UpdateWheelTransform()
+        {
+            if (_wheelRoot == null || _target == null)
+            {
+                return;
+            }
+
+            _wheelRoot.transform.position = _target.transform.position;
+
+            var cam = EventCamera;
+            if (cam != null && _referenceOrthographicSize > 0f)
+            {
+                _wheelRoot.transform.localScale = _baseScale * (cam.orthographicSize / _referenceOrthographicSize);
+            }
         }
 
         // The drowning swimmer under the mouse, or null. Uses the same 2D point test the old click
@@ -198,11 +227,12 @@ namespace ComfyJam.UI
             }
         }
 
-        // Evenly spaces slices around a circle, first slice at the top, going clockwise.
+        // Evenly spaces slices around a circle, first slice at the left, going clockwise.
+        // With two types this lays them out left and right.
         private void PositionSegment(RectTransform rect, int index, int total)
         {
             var angle = Mathf.PI * 2f * index / total;
-            rect.anchoredPosition = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle)) * _radius;
+            rect.anchoredPosition = new Vector2(-Mathf.Cos(angle), -Mathf.Sin(angle)) * _radius;
         }
 
         // Deploys the slice's type to the current target. Guarded by _isOpen so the mouse-poll and
