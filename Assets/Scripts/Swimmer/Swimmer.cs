@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class Swimmer : MonoBehaviour
 {
+    [Header("Hover Effect")]
+    [Tooltip("How much bigger the swimmer gets when hovered (e.g., 1.2 = 120% size)")]
+    public float hoverScaleFactor = 1.2f;
+    
     [Header("Movement")]
     public float minSpeed = 0.4f;
     public float maxSpeed = 1.2f;
@@ -190,6 +194,8 @@ public class Swimmer : MonoBehaviour
     {
         isSinking = true;
         sinkTimer = sinkDuration;
+        
+        transform.localScale = baseScale; 
 
         Swimmer[] all = GetAllSwimmers();
         Swimmer[] candidates = System.Array.FindAll(all, s => s != this && !s.isDrowning && !s.isSinking);
@@ -355,5 +361,21 @@ public class Swimmer : MonoBehaviour
     void OnDestroy()
     {
         _cacheTime = -1f;
+    }
+    
+    void OnMouseEnter()
+    {
+        if (!isSinking)
+        {
+            transform.localScale = baseScale * hoverScaleFactor;
+        }
+    }
+
+    void OnMouseExit()
+    {
+        if (!isSinking)
+        {
+            transform.localScale = baseScale;
+        }
     }
 }
