@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: 2
   _displayName: Fast Dude
   _icon: {fileID: -232793528889343271, guid: 6ed65a32f5b102c47aef4a51d229c7dd, type: 3}
-  _hireCost: 50
+  _hireCost: 100
   _speed: 10
   _stamina: 5
   _skill: 5
