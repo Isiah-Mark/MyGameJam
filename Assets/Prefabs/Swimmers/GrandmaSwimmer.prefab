@@ -93,7 +93,7 @@ MonoBehaviour:
   maxIdleTime: 4
   avoidRadius: 3
   avoidStrength: 2
-  minTimeUntilDrown: 10
+  minTimeUntilDrown: 15
   maxTimeUntilDrown: 30
   sinkDuration: 2
   _isEvil: 0
