@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b12ec6c3bfb654abfe3db22485d7a4, type: 3}
-  m_Name: Day1
-  m_EditorClassIdentifier: Assembly-CSharp::DayConfig
-  dayNumber: 1
-  swimmerCount: 15
-  dayDuration: 60
-  drownLimit: 5
+  m_Script: {fileID: 11500000, guid: 146be4d3f096a084698649aa2fbd5271, type: 3}
+  m_Name: Save10People
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectiveData
+  id: save_10
+  label: Save 10 People
+  category: 0
+  goal: 10
+  current: 0

@@ -32,7 +32,11 @@ public class SwimmerManager : MonoBehaviour
     public void ReportDrowned(bool isEvil)
     {
         // Evil swimmers don't count toward the drowned tally or the lose condition.
-        if (isEvil) return;
+        if (isEvil)
+        {
+            ObjectiveManager.Instance?.OnEnemyDefeated(); // evil swimmer = enemy
+            return;
+        }
 
         DayDrowned++;
         TotalDrowned++;
@@ -44,6 +48,7 @@ public class SwimmerManager : MonoBehaviour
         DaySaved++;
         TotalSaved++;
         UpdateUI();
+        ObjectiveManager.Instance?.OnSwimmerSaved();
     }
 
     public void ResetDayStats()
