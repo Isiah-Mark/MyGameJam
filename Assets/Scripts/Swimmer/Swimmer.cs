@@ -48,6 +48,11 @@ public class Swimmer : MonoBehaviour
     [Header("Panic")]
     [Range(0f, 1f)]
     public float panicChance = 0.3f;
+    
+    [Header("Audio")]
+    [Tooltip("The drowning sound effect")]
+    public AudioClip drownSound;
+    private AudioSource audioSource;
 
     private Vector2 target;
     protected bool isIdle = false;
@@ -102,6 +107,13 @@ public class Swimmer : MonoBehaviour
         drownTimer = Random.Range(minTimeUntilDrown, maxTimeUntilDrown);
         spawner = FindAnyObjectByType<SwimmerSpawner>();
         baseScale = transform.localScale;
+        
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+        
         SetAnimationState(ANIM_TREADING);
         PickNewTarget();
     }
@@ -162,6 +174,11 @@ public class Swimmer : MonoBehaviour
             drownTimer = Random.Range(5f, 10f);
             speed = baseSpeed * 0.1f;
             SetAnimationState(ANIM_DROWNING);
+            
+            if (audioSource != null && drownSound != null)
+            {
+                audioSource.PlayOneShot(drownSound);
+            }
         }
         else
         {

@@ -5,8 +5,114 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae35d8e7-5569-49eb-8627-db81dfb8c520" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Clipboard.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Clipboard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Clipboard.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Exit_UI.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Exit_UI.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Hire_button.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Hire_button.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Shop_lifeguard_icon_Fast_swimmer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Shop_lifeguard_icon_Fast_swimmer.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Shop_lifeguard_icon_slow_lifeguard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Shop_lifeguard_icon_slow_lifeguard.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Child.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Child/Child Evil variation.psb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Child/Child Evil variation.psb.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Child/Child.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Child/Child.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Child/Child.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Child/Child.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Child/Child.psb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Child/Child.psb.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Child/Drownng Animation.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Child/Drownng Animation.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Child/Evil Child Prefab.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Child/Evil Child Prefab.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Child/Evil child.spriteLib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Child/Evil child.spriteLib.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Child/Normal child.spriteLib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Child/Normal child.spriteLib.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Child/Saved Animation.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Child/Saved Animation.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Child/Treading Animation.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Child/Treading Animation.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Man.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Man/Being saved animation.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Man/Being saved animation.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Man/Big guy evil prefab.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Man/Big guy evil prefab.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Man/Big guy evil variation.psb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Man/Big guy evil variation.psb.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Man/Big guy prefab.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Man/Big guy prefab.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Man/Big guy.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Man/Big guy.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Man/Big guy.psb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Man/Big guy.psb.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Man/Man Drowning.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Man/Man Drowning.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Man/Man Evil.spriteLib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Man/Man Evil.spriteLib.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Man/Man Idle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Man/Man Idle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Man/Man normal.spriteLib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Swimmers/Man/Man normal.spriteLib.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/lifeguard.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/lifeguard/Death.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/lifeguard/Death.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/lifeguard/Lifeguard (normal).controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/lifeguard/Lifeguard (normal).controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/lifeguard/Lifeguard (normal).psb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/lifeguard/Lifeguard (normal).psb.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/lifeguard/Lifeguard prefab.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/lifeguard/Lifeguard prefab.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/lifeguard/Save animation.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/lifeguard/Save animation.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Lifeguards/Lifeguard.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Lifeguards/Lifeguard.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Swimmers/Child.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Swimmers/Child.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Swimmers/Evil.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Swimmers/Evil/Evil Child.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Swimmers/Evil/Evil Child.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Swimmers/Evil/Evil Grandma.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Swimmers/Evil/Evil Grandma.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Swimmers/Evil/Evil Man.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Swimmers/Evil/Evil Man.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Swimmers/Evil/Evil Woman.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Swimmers/Evil/Evil Woman.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Swimmers/Lifeguard.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Swimmers/Lifeguard.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Swimmers/Man.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Swimmers/Man.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Elfariany Sans Demo SDF.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Elfariany Sans Demo SDF.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Elfariany Sans Demo.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Elfariany Sans Demo.otf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/FTY SPEEDY CASUAL 001 NCV SDF.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/FTY SPEEDY CASUAL 001 NCV SDF.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/FTY SPEEDY CASUAL 001 NCV.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/FTY SPEEDY CASUAL 001 NCV.otf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/FancyCandy-Regular SDF.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/FancyCandy-Regular SDF.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/FancyCandy-Regular.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/FancyCandy-Regular.otf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/OrangeGumdrop-PersonalUse-Regular SDF.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/OrangeGumdrop-PersonalUse-Regular SDF.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/OrangeGumdrop-PersonalUse-Regular.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/OrangeGumdrop-PersonalUse-Regular.otf.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MyGameJam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyGameJam/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Lifeguards/BasicDude.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Lifeguards/BasicDude.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Lifeguards/FastDude.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Lifeguards/FastDude.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Shop/SwimmerPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Shop/SwimmerPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Swimmers/GrandmaSwimmer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Swimmers/GrandmaSwimmer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Swimmers/Woman.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Swimmers/Woman.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Day1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Day/Days/Day1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Day/Days/Day1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lifeguard/Lifeguard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lifeguard/Lifeguard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Swimmer/Swimmer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Swimmer/Swimmer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Swimmer/SwimmerSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Swimmer/SwimmerSpawner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/RescueWheelView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RescueWheelView.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +126,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "TojiNotVashin"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Isiah-Mark/MyGameJam.git",
+    "accountId": "0fdb4dff-cc8b-48fe-90ac-dc07000555b3"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Lifeguard/LifeguardDeployer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -40,7 +158,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feature/ui-updates",
+    "git-widget-placeholder": "Merging Music",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -53,28 +171,26 @@
 }]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="H:\Unity\Editor\6000.3.17f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/6000.3.17f1/Unity.app/Contents/MacOS/Unity" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath H:\Unity\Projects\MyGameJam -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="H:\Unity\Projects\MyGameJam" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
-      <option name="PTY_MODE" value="Auto" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="H:\Unity\Editor\6000.3.17f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/6000.3.17f1/Unity.app/Contents/MacOS/Unity" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath H:\Unity\Projects\MyGameJam -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="H:\Unity\Projects\MyGameJam" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
-      <option name="PTY_MODE" value="Auto" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" useMixedMode="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
@@ -85,10 +201,9 @@
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" useMixedMode="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
@@ -99,7 +214,6 @@
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
   </component>
