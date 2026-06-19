@@ -809,8 +809,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340cabce19b3f5945b7e65cc652563b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwimmerSpawner
-  grandmaPrefab: {fileID: 2095980528624949903, guid: 819b7eb8a3c26a74fab62692a149f331, type: 3}
-  womanPrefab: {fileID: 2095980528624949903, guid: 819b7eb8a3c26a74fab62692a149f331, type: 3}
+  swimmerPrefabs:
+  - {fileID: 8323812411262739683, guid: 71ce5aa362f3b094ab52ab978a10f629, type: 3}
+  - {fileID: 2095980528624949903, guid: 819b7eb8a3c26a74fab62692a149f331, type: 3}
+  - {fileID: 3268208985825125127, guid: 2a806eaa2b7d16f4abe883aa5de0fb94, type: 3}
+  - {fileID: 6779185806424424809, guid: 47fabcf988a05da4983182b6a53c8299, type: 3}
+  evilSwimmerPrefabs:
+  - {fileID: 1011833794150318012, guid: c6154a405cd37764da65f6d36b4e3766, type: 3}
+  - {fileID: 9072275743713369911, guid: bd52eccbffbd37c438f6a9cdecde5f31, type: 3}
+  - {fileID: 4234785329336301273, guid: 4b0a85b2d6139034b95208ebcf24a3ef, type: 3}
+  - {fileID: 2178630420525039955, guid: 51c4dcdb1c72834488cee0172080eda9, type: 3}
   areaMin: {x: -10, y: -5}
   areaMax: {x: 10, y: 5}
   padLeft: 0
@@ -1968,7 +1976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9c1f102d8045341b48366c354d84d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LifeguardDeployer
-  _lifeguardPrefab: {fileID: 6495823432349618350, guid: eb8ff9c4dfedb874ab9b18e49d7cc747, type: 3}
+  _lifeguardPrefab: {fileID: 2802127251749539875, guid: 5a1b6452944918248a9a8935e6fc64fd, type: 3}
   _spawnAnchor: {fileID: 310524707}
   _speedScale: 0.5
   _saveReward: 10

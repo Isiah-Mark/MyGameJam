@@ -85,8 +85,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Swimmer
   minSpeed: 0.4
   maxSpeed: 1.2
-  swimAreaMin: {x: 0, y: 0}
-  swimAreaMax: {x: 0, y: 0}
+  swimAreaMin: {x: -17, y: -7}
+  swimAreaMax: {x: 17, y: 9}
   minIdleTime: 1
   maxIdleTime: 4
   avoidRadius: 3
@@ -94,6 +94,7 @@ MonoBehaviour:
   minTimeUntilDrown: 10
   maxTimeUntilDrown: 30
   sinkDuration: 2
+  _isEvil: 0
   panicChance: 0.3
 --- !u!1001 &666112076017978230
 PrefabInstance:
@@ -147,14 +148,70 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grandma (White,Pink)
       objectReference: {fileID: 0}
+    - target: {fileID: 4975848973718766543, guid: 36fcb25c2a267d94a9c516dca3c33e95, type: 3}
+      propertyPath: m_Chain.m_TransformCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975848973718766543, guid: 36fcb25c2a267d94a9c516dca3c33e95, type: 3}
+      propertyPath: m_Chain.m_EffectorTransform
+      value: 
+      objectReference: {fileID: 44271365224771382}
+    - target: {fileID: 4975848973718766543, guid: 36fcb25c2a267d94a9c516dca3c33e95, type: 3}
+      propertyPath: 'm_Chain.m_Transforms.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8698264037199543693}
+    - target: {fileID: 4975848973718766543, guid: 36fcb25c2a267d94a9c516dca3c33e95, type: 3}
+      propertyPath: 'm_Chain.m_Transforms.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4338466202854829691}
+    - target: {fileID: 4975848973718766543, guid: 36fcb25c2a267d94a9c516dca3c33e95, type: 3}
+      propertyPath: 'm_Chain.m_Transforms.Array.data[2]'
+      value: 
+      objectReference: {fileID: 3222405093719703038}
+    - target: {fileID: 4975848973718766543, guid: 36fcb25c2a267d94a9c516dca3c33e95, type: 3}
+      propertyPath: m_Chain.m_DefaultLocalRotations.Array.data[0].w
+      value: 0.07335612
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975848973718766543, guid: 36fcb25c2a267d94a9c516dca3c33e95, type: 3}
+      propertyPath: m_Chain.m_DefaultLocalRotations.Array.data[0].z
+      value: 0.9973058
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975848973718766543, guid: 36fcb25c2a267d94a9c516dca3c33e95, type: 3}
+      propertyPath: m_Chain.m_DefaultLocalRotations.Array.data[1].w
+      value: 0.83532435
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975848973718766543, guid: 36fcb25c2a267d94a9c516dca3c33e95, type: 3}
+      propertyPath: m_Chain.m_DefaultLocalRotations.Array.data[1].z
+      value: 0.54975754
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36fcb25c2a267d94a9c516dca3c33e95, type: 3}
+--- !u!4 &44271365224771382 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 694620821957108800, guid: 36fcb25c2a267d94a9c516dca3c33e95, type: 3}
+  m_PrefabInstance: {fileID: 666112076017978230}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &310245183978887135 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 968475399081172137, guid: 36fcb25c2a267d94a9c516dca3c33e95, type: 3}
+  m_PrefabInstance: {fileID: 666112076017978230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3222405093719703038 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2704069883438839432, guid: 36fcb25c2a267d94a9c516dca3c33e95, type: 3}
+  m_PrefabInstance: {fileID: 666112076017978230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4338466202854829691 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3822383321822094605, guid: 36fcb25c2a267d94a9c516dca3c33e95, type: 3}
+  m_PrefabInstance: {fileID: 666112076017978230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8698264037199543693 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8181053057223833339, guid: 36fcb25c2a267d94a9c516dca3c33e95, type: 3}
   m_PrefabInstance: {fileID: 666112076017978230}
   m_PrefabAsset: {fileID: 0}
