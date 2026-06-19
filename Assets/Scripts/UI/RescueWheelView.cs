@@ -120,6 +120,10 @@ namespace ComfyJam.UI
                     {
                         DeploySegment(segment);
                     }
+                    else
+                    {
+                        Close();
+                    }
                 }
 
                 return;

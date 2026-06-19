@@ -135,7 +135,10 @@ public class Swimmer : MonoBehaviour
             drownTimer -= Time.deltaTime;
             if (drownTimer <= 0f)
             {
-                StartSinking();
+                if (_isEvil)
+                    FakeDrown();
+                else
+                    StartSinking();
             }
         }
 
@@ -150,10 +153,30 @@ public class Swimmer : MonoBehaviour
 
     void TryStartDrowning()
     {
+        Vector2 pos = transform.position;
+        float drownBorder = 2f;
+        if (pos.x <= swimAreaMin.x + drownBorder ||
+            pos.x >= swimAreaMax.x - drownBorder ||
+            pos.y <= swimAreaMin.y + drownBorder ||
+            pos.y >= swimAreaMax.y - drownBorder)
+        {
+            drownTimer = Random.Range(1f, 3f);
+            return;
+        }
+
+        if (_isEvil)
+        {
+            isDrowning = true;
+            drownTimer = Random.Range(5f, 10f);
+            speed = 0f;
+            SetAnimationState(ANIM_DROWNING);
+            return;
+        }
+
         int drowningCount = 0;
         foreach (Swimmer s in GetAllSwimmers())
         {
-            if (s.isDrowning) drowningCount++;
+            if (s.isDrowning && !s.IsEvil) drowningCount++;
         }
 
         if (drowningCount < maxDrowning)
@@ -167,6 +190,24 @@ public class Swimmer : MonoBehaviour
         {
             drownTimer = Random.Range(minTimeUntilDrown, maxTimeUntilDrown);
         }
+    }
+
+    void FakeDrown()
+    {
+        isDrowning = false;
+        _rescueAssigned = false;
+        speed = baseSpeed;
+        drownTimer = Random.Range(minTimeUntilDrown, maxTimeUntilDrown);
+
+        // Force animator reset
+        if (animator != null)
+        {
+            animator.Rebind();
+            animator.Update(0f);
+        }
+
+        SetAnimationState(ANIM_TREADING);
+        PickNewTarget();
     }
 
     void StartSinking()
@@ -208,6 +249,8 @@ public class Swimmer : MonoBehaviour
 
     void Move()
     {
+        if (_isEvil && isDrowning) return;
+
         Vector2 pos = transform.position;
         Vector2 toTarget = (Vector2)target - pos;
 
