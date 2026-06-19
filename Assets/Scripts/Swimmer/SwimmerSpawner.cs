@@ -4,8 +4,8 @@ using System.Collections.Generic;
 public class SwimmerSpawner : MonoBehaviour
 {
     [Header("Swimmer Prefabs")]
-    public GameObject grandmaPrefab;
-    public GameObject womanPrefab;
+    public GameObject[] swimmerPrefabs;
+    public GameObject[] evilSwimmerPrefabs;
 
     [HideInInspector] public Vector2 areaMin;
     [HideInInspector] public Vector2 areaMax;
@@ -25,26 +25,58 @@ public class SwimmerSpawner : MonoBehaviour
     {
         if (backgroundSprite != null)
         {
-            areaMin = new Vector2(backgroundSprite.bounds.min.x, backgroundSprite.bounds.min.y);
-            areaMax = new Vector2(backgroundSprite.bounds.max.x, backgroundSprite.bounds.max.y);
+            areaMin = new Vector2(backgroundSprite.bounds.min.x + padLeft, backgroundSprite.bounds.min.y + padBottom);
+            areaMax = new Vector2(backgroundSprite.bounds.max.x - padRight, backgroundSprite.bounds.max.y - padTop);
         }
         else
         {
-            Camera cam = Camera.main;
-            float height = cam.orthographicSize;
-            float width = height * cam.aspect;
-
-            areaMin = new Vector2(-width + padLeft, -height + padBottom);
-            areaMax = new Vector2(width - padRight, height - padTop);
+            areaMin = new Vector2(-17f, -5.5f);
+            areaMax = new Vector2(18f, 8f);
         }
+
+        Debug.Log($"Spawner area: {areaMin} to {areaMax}");
     }
 
     public void Spawn(int count)
     {
+        int evilCount = Mathf.RoundToInt(count * 0.2f);
+        List<int> evilIndices = new List<int>();
+
+        while (evilIndices.Count < evilCount)
+        {
+            int index = Random.Range(0, count);
+            if (!evilIndices.Contains(index))
+                evilIndices.Add(index);
+        }
+
         for (int i = 0; i < count; i++)
         {
-            SpawnSwimmer();
+            SpawnSwimmer(evilIndices.Contains(i));
         }
+    }
+
+    void SpawnSwimmer(bool isEvil = false)
+    {
+        float x = Random.Range(areaMin.x, areaMax.x);
+        float y = Random.Range(areaMin.y, areaMax.y);
+
+        GameObject prefab = isEvil
+            ? evilSwimmerPrefabs[Random.Range(0, evilSwimmerPrefabs.Length)]
+            : swimmerPrefabs[Random.Range(0, swimmerPrefabs.Length)];
+
+        GameObject s = Instantiate(prefab, new Vector3(x, y, 0), Quaternion.identity);
+        Swimmer swimmer = s.GetComponent<Swimmer>();
+        swimmer.swimAreaMin = areaMin;
+        swimmer.swimAreaMax = areaMax;
+
+        if (isEvil)
+        {
+            var field = typeof(Swimmer).GetField("_isEvil",
+                System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            field?.SetValue(swimmer, true);
+        }
+
+        activeSwimmers.Add(s);
     }
 
     public void ClearSwimmers()
@@ -54,19 +86,5 @@ public class SwimmerSpawner : MonoBehaviour
             if (s != null) Destroy(s);
         }
         activeSwimmers.Clear();
-    }
-
-    void SpawnSwimmer()
-    {
-        float x = Random.Range(areaMin.x, areaMax.x);
-        float y = Random.Range(areaMin.y, areaMax.y);
-
-        GameObject prefab = Random.value > 0.5f ? grandmaPrefab : womanPrefab;
-
-        GameObject s = Instantiate(prefab, new Vector3(x, y, 0), Quaternion.identity);
-        Swimmer swimmer = s.GetComponent<Swimmer>();
-        swimmer.swimAreaMin = areaMin;
-        swimmer.swimAreaMax = areaMax;
-        activeSwimmers.Add(s);
     }
 }
