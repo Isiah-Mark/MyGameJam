@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class Swimmer : MonoBehaviour
 {
+    [Header("Hover Effect")]
+    [Tooltip("How much bigger the swimmer gets when hovered (e.g., 1.2 = 120% size)")]
+    public float hoverScaleFactor = 1.2f;
+    
     [Header("Movement")]
     public float minSpeed = 0.4f;
     public float maxSpeed = 1.2f;
@@ -147,7 +151,10 @@ public class Swimmer : MonoBehaviour
             drownTimer -= Time.deltaTime;
             if (drownTimer <= 0f)
             {
-                StartSinking();
+                if (_isEvil)
+                    FakeDrown();
+                else
+                    StartSinking();
             }
         }
 
@@ -162,10 +169,30 @@ public class Swimmer : MonoBehaviour
 
     void TryStartDrowning()
     {
+        Vector2 pos = transform.position;
+        float drownBorder = 2f;
+        if (pos.x <= swimAreaMin.x + drownBorder ||
+            pos.x >= swimAreaMax.x - drownBorder ||
+            pos.y <= swimAreaMin.y + drownBorder ||
+            pos.y >= swimAreaMax.y - drownBorder)
+        {
+            drownTimer = Random.Range(1f, 3f);
+            return;
+        }
+
+        if (_isEvil)
+        {
+            isDrowning = true;
+            drownTimer = Random.Range(5f, 10f);
+            speed = 0f;
+            SetAnimationState(ANIM_DROWNING);
+            return;
+        }
+
         int drowningCount = 0;
         foreach (Swimmer s in GetAllSwimmers())
         {
-            if (s.isDrowning) drowningCount++;
+            if (s.isDrowning && !s.IsEvil) drowningCount++;
         }
 
         if (drowningCount < maxDrowning)
@@ -186,10 +213,30 @@ public class Swimmer : MonoBehaviour
         }
     }
 
+    void FakeDrown()
+    {
+        isDrowning = false;
+        _rescueAssigned = false;
+        speed = baseSpeed;
+        drownTimer = Random.Range(minTimeUntilDrown, maxTimeUntilDrown);
+
+        // Force animator reset
+        if (animator != null)
+        {
+            animator.Rebind();
+            animator.Update(0f);
+        }
+
+        SetAnimationState(ANIM_TREADING);
+        PickNewTarget();
+    }
+
     void StartSinking()
     {
         isSinking = true;
         sinkTimer = sinkDuration;
+        
+        transform.localScale = baseScale; 
 
         Swimmer[] all = GetAllSwimmers();
         Swimmer[] candidates = System.Array.FindAll(all, s => s != this && !s.isDrowning && !s.isSinking);
@@ -225,6 +272,8 @@ public class Swimmer : MonoBehaviour
 
     void Move()
     {
+        if (_isEvil && isDrowning) return;
+
         Vector2 pos = transform.position;
         Vector2 toTarget = (Vector2)target - pos;
 
@@ -355,5 +404,21 @@ public class Swimmer : MonoBehaviour
     void OnDestroy()
     {
         _cacheTime = -1f;
+    }
+    
+    void OnMouseEnter()
+    {
+        if (!isSinking)
+        {
+            transform.localScale = baseScale * hoverScaleFactor;
+        }
+    }
+
+    void OnMouseExit()
+    {
+        if (!isSinking)
+        {
+            transform.localScale = baseScale;
+        }
     }
 }
