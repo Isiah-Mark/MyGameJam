@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BasicDude
   m_EditorClassIdentifier: Assembly-CSharp::ComfyJam.Lifeguards.LifeguardTypeSO
   _id: 1
-  _displayName: Basic Dude
+  _displayName: Normal Dude
   _icon: {fileID: 1785335464843233779, guid: 7b93a48edc8798a4092187074cb35201, type: 3}
   _hireCost: 40
   _speed: 4
