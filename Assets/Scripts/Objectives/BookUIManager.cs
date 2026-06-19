@@ -73,7 +73,7 @@ public class BookUIManager : MonoBehaviour
 
         pageLabel.text = $"Page {currentPage + 1} of {totalPages}";
         int doneCount = list.Count(o => o.IsComplete);
-        progressLabel.text = $"{doneCount} / {list.Count} complete";
+        progressLabel.text = $"{doneCount} / {list.Count} fin";
 
         prevButton.interactable = currentPage > 0;
         nextButton.interactable = currentPage < totalPages - 1;
