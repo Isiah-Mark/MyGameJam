@@ -2967,7 +2967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c71aa7da6e84440e8e5e23db832eb76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CursorScript
-  cursorTexture: {fileID: 2800000, guid: aeaa14ae7addd114bb5b791dee231576, type: 3}
+  cursorTexture: {fileID: 2800000, guid: 9f91056a687243242a682645fd73398d, type: 3}
   clickAudio: {fileID: 8300000, guid: a3e6b6789aa8f4147bd1704e55eea282, type: 3}
 --- !u!82 &1425896474
 AudioSource:
