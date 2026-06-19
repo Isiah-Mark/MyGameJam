@@ -91,11 +91,12 @@ MonoBehaviour:
   maxIdleTime: 4
   avoidRadius: 3
   avoidStrength: 2
-  minTimeUntilDrown: 10
+  minTimeUntilDrown: 15
   maxTimeUntilDrown: 30
   sinkDuration: 2
   _isEvil: 0
   panicChance: 0.3
+  drownSound: {fileID: 0}
 --- !u!1001 &7931821963367792287
 PrefabInstance:
   m_ObjectHideFlags: 0
