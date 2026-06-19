@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteLibrarySourceAsset
+  m_Library:
+  - m_Name: Eyes
+    m_Hash: 120101800
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Good eyes
+      m_Hash: 1010138553
+      m_Sprite: {fileID: -8135493764819058448, guid: 1d61448b0260f34418d804ebe85aeefa, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -8135493764819058448, guid: 1d61448b0260f34418d804ebe85aeefa, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: Head
+    m_Hash: 130111906
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Good head
+      m_Hash: 1021099955
+      m_Sprite: {fileID: 7524629478197251717, guid: 1d61448b0260f34418d804ebe85aeefa, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7524629478197251717, guid: 1d61448b0260f34418d804ebe85aeefa, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: Hair
+    m_Hash: 1019596327
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Hair
+      m_Hash: 1019596327
+      m_Sprite: {fileID: -3772278478826612279, guid: 1d61448b0260f34418d804ebe85aeefa, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -3772278478826612279, guid: 1d61448b0260f34418d804ebe85aeefa, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: L arm
+    m_Hash: 470567661
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: L arm
+      m_Hash: 470567661
+      m_Sprite: {fileID: -6685689262758402856, guid: 1d61448b0260f34418d804ebe85aeefa, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -6685689262758402856, guid: 1d61448b0260f34418d804ebe85aeefa, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: R arm
+    m_Hash: 64774926
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: R arm
+      m_Hash: 64774926
+      m_Sprite: {fileID: 7788359061608862755, guid: 1d61448b0260f34418d804ebe85aeefa, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7788359061608862755, guid: 1d61448b0260f34418d804ebe85aeefa, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: Torso
+    m_Hash: 647926657
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Torso
+      m_Hash: 647926657
+      m_Sprite: {fileID: -396293368213797850, guid: 1d61448b0260f34418d804ebe85aeefa, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -396293368213797850, guid: 1d61448b0260f34418d804ebe85aeefa, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 639171319249549609
+  m_Version: 1
