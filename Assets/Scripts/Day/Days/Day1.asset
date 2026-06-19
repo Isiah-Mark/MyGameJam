@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Day1
   m_EditorClassIdentifier: Assembly-CSharp::DayConfig
   dayNumber: 1
-  swimmerCount: 20
+  swimmerCount: 15
   dayDuration: 60
+  drownLimit: 5
