@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1011833794150318012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7845146365676976865}
+  - component: {fileID: -7864770665385960186}
+  - component: {fileID: -1751541256064556862}
+  m_Layer: 0
+  m_Name: Evil Grandma
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7845146365676976865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011833794150318012}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.42684, y: -3.07806, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1758825429162062007}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &-7864770665385960186
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011833794150318012}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.07581508, y: -0.07989502}
+  m_Size: {x: 1.1415133, y: 1.5060372}
+  m_Direction: 0
+--- !u!114 &-1751541256064556862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011833794150318012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 582a7cd3020d56644aebc9d4f09afa9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Swimmer
+  minSpeed: 0.4
+  maxSpeed: 1.2
+  swimAreaMin: {x: 0, y: 0}
+  swimAreaMax: {x: 0, y: 0}
+  minIdleTime: 1
+  maxIdleTime: 4
+  avoidRadius: 3
+  avoidStrength: 2
+  minTimeUntilDrown: 10
+  maxTimeUntilDrown: 30
+  sinkDuration: 2
+  _isEvil: 1
+  panicChance: 0.3
+--- !u!1001 &895205307667068342
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7845146365676976865}
+    m_Modifications:
+    - target: {fileID: 345910513867267426, guid: 875d2e2325c5da84e9377ee8797856d3, type: 3}
+      propertyPath: m_Name
+      value: Grandma_Evil_variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1442543945218966785, guid: 875d2e2325c5da84e9377ee8797856d3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1442543945218966785, guid: 875d2e2325c5da84e9377ee8797856d3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1442543945218966785, guid: 875d2e2325c5da84e9377ee8797856d3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1442543945218966785, guid: 875d2e2325c5da84e9377ee8797856d3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1442543945218966785, guid: 875d2e2325c5da84e9377ee8797856d3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1442543945218966785, guid: 875d2e2325c5da84e9377ee8797856d3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1442543945218966785, guid: 875d2e2325c5da84e9377ee8797856d3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1442543945218966785, guid: 875d2e2325c5da84e9377ee8797856d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1442543945218966785, guid: 875d2e2325c5da84e9377ee8797856d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1442543945218966785, guid: 875d2e2325c5da84e9377ee8797856d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495940426275471707, guid: 875d2e2325c5da84e9377ee8797856d3, type: 3}
+      propertyPath: m_labelHash
+      value: 0.007988548
+      objectReference: {fileID: 0}
+    - target: {fileID: 8676738690748419243, guid: 875d2e2325c5da84e9377ee8797856d3, type: 3}
+      propertyPath: m_labelHash
+      value: 0.35309148
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 875d2e2325c5da84e9377ee8797856d3, type: 3}
+--- !u!4 &1758825429162062007 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1442543945218966785, guid: 875d2e2325c5da84e9377ee8797856d3, type: 3}
+  m_PrefabInstance: {fileID: 895205307667068342}
+  m_PrefabAsset: {fileID: 0}

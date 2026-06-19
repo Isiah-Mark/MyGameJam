@@ -77,7 +77,6 @@ public class Lifeguard : MonoBehaviour
 
         if (Vector2.Distance(transform.position, targetSwimmer.transform.position) < 1.5f)
         {
-            // An evil swimmer drags the lifeguard down: both are lost, no rescue.
             if (targetSwimmer.IsEvil)
             {
                 Destroy(targetSwimmer.gameObject);
@@ -88,6 +87,10 @@ public class Lifeguard : MonoBehaviour
 
             rescueX = targetSwimmer.transform.position.x;
             targetSwimmer.BeingRescued = true;
+
+            // Flip lifeguard 180 degrees when dragging to shore
+            transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+
             phase = RescuePhase.DragToShore;
         }
     }
@@ -110,10 +113,10 @@ public class Lifeguard : MonoBehaviour
         }
     }
 
-    // Fires the completion callback once. The deployer despawns this lifeguard from here.
     void Complete(RescueOutcome outcome)
     {
         phase = RescuePhase.None;
+        transform.rotation = Quaternion.identity; // reset rotation
         var callback = onComplete;
         onComplete = null;
         callback?.Invoke(outcome);
