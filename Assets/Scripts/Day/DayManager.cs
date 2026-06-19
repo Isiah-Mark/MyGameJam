@@ -57,6 +57,8 @@ public class DayManager : MonoBehaviour
         SwimmerManager.Instance.SetDrownLimit(config.drownLimit);
         SwimmerManager.Instance.ResetDayStats();
         dayActive = true;
+
+        ObjectiveManager.Instance.LoadDay(CurrentDay);
     }
 
     void EndDay()

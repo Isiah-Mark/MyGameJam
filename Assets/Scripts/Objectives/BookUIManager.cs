@@ -1,10 +1,19 @@
+using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class BookUIManager : MonoBehaviour
 {
+    public static BookUIManager Instance { get; private set; }
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
+        Instance = this;
+    }
+
     [SerializeField] ObjectiveList allObjectives;
     [SerializeField] ObjectiveEntryUI[] slots;
     [SerializeField] TextMeshProUGUI pageLabel;
@@ -103,6 +112,14 @@ public class BookUIManager : MonoBehaviour
             PlayerPrefs.DeleteKey("obj_" + obj.id);
         }
         PlayerPrefs.Save();
+        currentPage = 0;
+        RenderPage();
+    }
+
+    public void LoadObjectives(List<ObjectiveData> objectives)
+    {
+        // replace the active list and reset to page 1
+        allObjectives.objectives = objectives;
         currentPage = 0;
         RenderPage();
     }
