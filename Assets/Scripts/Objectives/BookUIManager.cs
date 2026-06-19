@@ -6,7 +6,7 @@ using TMPro;
 public class BookUIManager : MonoBehaviour
 {
     [SerializeField] ObjectiveList allObjectives;
-    [SerializeField] ObjectiveEntryUI[] slots;       // drag all 3 slots here
+    [SerializeField] ObjectiveEntryUI[] slots;
     [SerializeField] TextMeshProUGUI pageLabel;
     [SerializeField] TextMeshProUGUI progressLabel;
     [SerializeField] Button prevButton;
@@ -17,9 +17,16 @@ public class BookUIManager : MonoBehaviour
     int currentPage = 0;
     bool isOpen = false;
 
+    /*void Start()
+    {
+        LoadProgress(); // would save old data
+        ObjectiveEvents.OnAnyObjectiveUpdated += OnObjectiveUpdated;
+        RenderPage();
+    }*/
+
     void Start()
     {
-        LoadProgress();
+        ResetProgress(); // always fresh on scene load
         ObjectiveEvents.OnAnyObjectiveUpdated += OnObjectiveUpdated;
         RenderPage();
     }
@@ -66,7 +73,7 @@ public class BookUIManager : MonoBehaviour
 
         pageLabel.text = $"Page {currentPage + 1} of {totalPages}";
         int doneCount = list.Count(o => o.IsComplete);
-        progressLabel.text = $"{doneCount} / {list.Count} done";
+        progressLabel.text = $"{doneCount} / {list.Count} complete";
 
         prevButton.interactable = currentPage > 0;
         nextButton.interactable = currentPage < totalPages - 1;
@@ -87,4 +94,17 @@ public class BookUIManager : MonoBehaviour
         foreach (var obj in allObjectives.objectives)
             obj.current = PlayerPrefs.GetInt("obj_" + obj.id, 0);
     }
+
+    public void ResetProgress()
+    {
+        foreach (var obj in allObjectives.objectives)
+        {
+            obj.current = 0;
+            PlayerPrefs.DeleteKey("obj_" + obj.id);
+        }
+        PlayerPrefs.Save();
+        currentPage = 0;
+        RenderPage();
+    }
+
 }
